@@ -1,6 +1,9 @@
 #Write Speed [mm^2 /min]
 #Preset DoseToEnergy/ Optical Transmission factor 4mm Schreibkopf 365 nm
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
