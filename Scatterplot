@@ -1,0 +1,20 @@
+#Write Speed [mm^2 /min]
+#Preset DoseToEnergy/ Optical Transmission factor 4mm Schreibkopf 365 nm
+
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+
+DoseToEnergy = np.array([0.11, 0.103, 0.13, 0.15, 0.12, 0.1, 0.1, 0.43, 0, 0, 0.08, 0.104])
+WriteSpeed = np.array([15, 12, 15, 14, 14, 13.82, 11, 13, 14.7, 13, 14.9, 14])
+
+ax1 = plt.subplot()
+l1, = ax1.plot(DoseToEnergy, linestyle='--', marker='o', color='r', label='line with marker')
+ax2 = ax1.twinx()
+l2, = ax2.plot(WriteSpeed, linestyle='--', marker='o', color='b', label='line with marker')
+
+ax1.set_xlabel('n')
+ax1.set_ylabel('DoseToEnergy')
+ax2.set_ylabel('WriteSpeed [mm^2 /min]')
+
+plt.legend([l1, l2], ["DoseToEnergy", "WriteSpeed"])
+plt.title("Wellenlänge 365 nm 4 mm Schreibkopf Scatterplot")
