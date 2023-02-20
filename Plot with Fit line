@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+DoseToEnergy = np.array([0.11, 0.103, 0.13, 0.15, 0.12, 0.1, 0.1, 0.43, 0, 0, 0.08, 0.104])
+WriteSpeed = np.array([15, 12, 15, 14, 14, 13.82, 11, 13, 14.7, 13, 14.9, 14])
+
+plt.scatter(DoseToEnergy,WriteSpeed,color='r',zorder=2)
+
+#calculate equation for trendline
+z = np.polyfit(DoseToEnergy, WriteSpeed, 1)
+p = np.poly1d(z)
+
+#add trendline to plot
+plt.plot(DoseToEnergy, p(DoseToEnergy))
+
+plt.title("Wellenlänge 365 nm 4 mm Schreibkopf Scatterplot")
+plt.xlabel("DoseToEnergy")
+plt.ylabel("WriteSpeed")
+
+plt.show()
